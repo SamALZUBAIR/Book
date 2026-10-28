@@ -1,9 +1,27 @@
-# booksmk Android
+# booksmk — مكتبة سام الزبير
 
-Native Android project (Java + Android SDK), Arabic RTL intent, black/gold theme, local SQLite catalog, document picker, Android PdfRenderer, EPUB first-content extraction, and JSON backup export scaffold.
+واجهة ويب عربية باتجاه RTL، بتصميم أسود وذهبي، تعمل دون مكتبات خارجية أو خدمات خلفية.
 
-## Build
-Open this repository in Android Studio with Android SDK 35 and JDK 17, then run `:app:assembleDebug`.
+**المطور:** سام الزبير — Sam Alzubair
 
-## Important status
-This source is an initial native implementation, not a verified release. It requires compilation and device tests. EPUB support currently renders the first HTML/XHTML entry rather than a full EPUB spine/navigation implementation. Backup restore and PDF/EPUB regression tests remain to be completed. No network permission is declared.
+## الموجود في المعاينة
+- 12 سجلًا لكتب كلاسيكية عربية وعالمية.
+- بحث فوري وتصنيفات حسب نوع الكتاب.
+- مقتطفات تعريفية محفوظة داخل الصفحة ويمكن قراءتها دون اتصال بعد تحميل الموقع.
+- قائمة قراءة محفوظة محليًا في المتصفح.
+- روابط إلى مصادر عامة لقراءة النصوص الأصلية أو الرجوع إلى المصدر.
+
+## ملاحظة مهمة عن الحقوق والمحتوى
+الأعمال الكلاسيكية الأصلية المختارة قديمة، لكن حقوق الطبعات المحققة والترجمات الحديثة يمكن أن تختلف. لذلك لا يتضمن التطبيق نسخًا من ترجمات حديثة غير متحقق من ترخيصها. الكتب العالمية تُعرض مع نبذة عربية ورابط إلى النص الأصلي المتاح في Project Gutenberg، لا على أنها ترجمة عربية كاملة. المحتوى المضمّن حاليًا **مقتطفات تعريفية وليست النصوص الكاملة للكتب**.
+
+مصادر مختارة:
+- [ويكي مصدر العربي: كليلة ودمنة](https://ar.wikisource.org/wiki/كليلة_ودمنة_(1816))
+- [ويكي مصدر العربي: ألف ليلة وليلة](https://ar.wikisource.org/wiki/ألف_ليلة_وليلة)
+- [المجموعات العربية على الإنترنت — NYU](https://aco.dlib.nyu.edu/)، وهي مجموعة كتب عربية متاحة في المجال العام.
+- [Project Gutenberg](https://www.gutenberg.org/) للنصوص الأصلية العالمية المتاحة في المجال العام.
+
+## الحالة التقنية
+هذه معاينة ويب أولية. البحث وقائمة القراءة يعملان محليًا، ولا توجد حسابات أو إعلانات أو تحليلات أو اتصالات خلفية مضافة. روابط المصادر الخارجية تتطلب الإنترنت. لم يُدمج بعد قارئ PDF/EPUB، ولا ينبغي اعتبار ملفات Android إصدارًا نهائيًا قبل البناء والاختبار على جهاز حقيقي.
+
+## نشر معاينة الويب
+يمكن نشر ملف index.html مباشرة على Netlify من جذر المستودع؛ اترك أمر البناء فارغًا، واجعل مجلد النشر نقطة (.) أو اتركه فارغًا إذا كانت واجهة Netlify تعتبره جذر المشروع.
