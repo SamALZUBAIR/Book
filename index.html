@@ -27,7 +27,7 @@
 <script>
 (function(){
 const data=window.STORIES;
-let category='الكل',query='',saved=ew Set(JSON.parse(localStorage.getItem('حبر.saved.v1')||'[]')),current=null;
+let category='الكل',query='',saved=new Set(JSON.parse(localStorage.getItem('Narrator.saved.v1')||'[]')),current=null;
 const $=s=>document.querySelector(s),$$=s=>Array.from(document.querySelectorAll(s));
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function toast(s){$('#toast').textContent=s;$('#toast').style.display='block';setTimeout(()=>$('#toast').style.display='none',2300)}
@@ -38,7 +38,7 @@ function openBook(id){current=data.find(b=>b.id===id);if(!current)return;$('#rt'
 $('#q').addEventListener('input',e=>{query=e.target.value;render()});
 $('#filters').addEventListener('click',e=>{let b=e.target.closest('[data-cat]');if(!b)return;category=b.dataset.cat;$$('.chip').forEach(x=>x.classList.toggle('active',x===b));render()});
 document.addEventListener('click',e=>{let nav=e.target.closest('[data-page]');if(nav){navigate(nav.dataset.page);return}let read=e.target.closest('[data-read]');if(read){openBook(read.dataset.read);return}let sv=e.target.closest('[data-save]');if(sv){toggle(sv.dataset.save);return}});
-function toggle(id){saved.has(id)?saved.delete(id):saved.add(id);localStorage.setItem('حبر.saved.v1',JSON.stringify([...saved]));render();if(current&&current.id===id)$('#save').textContent=saved.has(id)?'✓ محفوظ':'♡ حفظ';toast(saved.has(id)?'أضيف إلى قائمة القراءة':'أزيل من قائمة القراءة')}
+function toggle(id){saved.has(id)?saved.delete(id):saved.add(id);localStorage.setItem('Narrator.saved.v1',JSON.stringify([...saved]));render();if(current&&current.id===id)$('#save').textContent=saved.has(id)?'✓ محفوظ':'♡ حفظ';toast(saved.has(id)?'أضيف إلى قائمة القراءة':'أزيل من قائمة القراءة')}
 $('#save').onclick=()=>{if(current)toggle(current.id)};$('#close').onclick=()=>$('#reader').classList.remove('open');render();
 })();
 </script></body></html>
