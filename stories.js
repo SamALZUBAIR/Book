@@ -1,4 +1,4 @@
-/* Narrator — 50 Arabic summaries of historical reported hauntings and strange phenomena. These are reported accounts, not proof of supernatural causes. */
+/* Narrator — 63 Arabic summaries of historical reported hauntings and strange phenomena. Reported cases are not proof of supernatural causes. */
 window.STORIES = [
   {
     "id": "story-01",
